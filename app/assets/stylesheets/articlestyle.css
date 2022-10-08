@@ -1,0 +1,14 @@
+
+
+.articleContainer{
+  display: grid;
+}
+
+.formContainer{
+  display: flex;
+  flex-direction: column;
+}
+
+.item{
+  display: block;
+}

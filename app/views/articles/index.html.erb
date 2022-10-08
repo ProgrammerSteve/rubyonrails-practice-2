@@ -1,12 +1,24 @@
+<%= stylesheet_link_tag "articlestyle.css" %>
 <h1>Articles</h1>
-<ul>
+<div class="articleContainer">
     <% @articles.each do |article| %>
-        <li>
-            <%= article.title %>
-        </li>
-    <% end %>
-</ul>
+        <div class="formContainer">
+            <p><%= article.title %></p>
+            <%= form_with url: "/alter", method: :get do |form| %>
 
+                <%= form.label :articletitle, "Article Name" %>
+                <%= form.text_field :articletitle, class: "item" %>
+
+                <%= form.label :articlebody, "Article Body" %>
+                <%= form.text_area :articlebody, size: "70x5", class: "item"  %>
+
+                <%= form.submit "Submit" %>
+            <% end %>
+        </div>
+    <% end %>
+</div>
+
+<br><br>
 
 <%= form_with do |form| %>
  Form contents
